@@ -1,0 +1,4 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <button size="mini" bindtap="gotoGame">石头剪刀布</button>
+</view>

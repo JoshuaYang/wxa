@@ -1,0 +1,20 @@
+<!--pages/game/game.wxml-->
+<view class="container">
+  <view class="wrapper computer-wrapper">
+    <text class="title">电脑</text>
+    <view class="choice-box">
+      <image class="choice" src="{{choice[computerChoiceIndex].image}}" mode="widthFix"></image>
+    </view>
+  </view>
+
+  <text class="vs">VS</text>
+
+  <view class="wrapper user-wrapper">
+    <image class="choice" src="{{choice[userChoiceIndex].image}}" mode="widthFix"></image>
+    <text class="title">我</text>
+  </view>
+
+  <view class="choice-wrapper">
+    <image wx:for="{{choice}}" wx:key="value" wx:if="{{item.active}}" src="{{item.image}}" mode="widthFix" bindtap="choiceHandler" data-index="{{index}}"></image>
+  </view>
+</view>

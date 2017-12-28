@@ -1,0 +1,35 @@
+/* pages/game/game.wxss */
+.container {
+  text-align: center;
+}
+
+.wrapper .choice {
+  width: 200rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.computer-wrapper .choice {
+  transform: rotate(180deg);
+  margin-top: 20px;
+}
+
+.user-wrapper .choice {
+  margin-bottom: 20px;
+}
+
+.vs {
+  display: block;
+  font-size: 100rpx;
+  margin: 10px 0;
+}
+
+.choice-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.choice-wrapper image {
+  width: 150rpx;
+}
