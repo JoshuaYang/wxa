@@ -28,13 +28,27 @@ Page({
 
     computerChoiceIndex: 1,
     userChoiceIndex: 3,
+
+    totalCount: 0,
+    winCount: 0,
+    winPercent: '0%',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.getStorage({
+      key: 'record',
+      success: (res) => {
+
+        this.setData({
+          totalCount: res.data.totalCount,
+          winCount: res.data.winCount,
+          winPercent: this.calcWinPercent(res.data.winCount, res.data.totalCount),
+        });
+      },
+    });
   },
 
   /**
@@ -117,13 +131,33 @@ Page({
     let msg = '';
     const DIFF = userChoice - computerChoice;
 
+    this.setData({
+      totalCount: this.data.totalCount + 1,
+    });
+
     if (DIFF === 0) {
       msg = '😌居然平局😌';
     } else if (DIFF === -1 || DIFF === 2){
       msg = '😎大佬，你赢了😏';
+
+      const finalWinCount = this.data.winCount + 1;
+
+      this.setData({
+        winCount: finalWinCount,
+        winPercent: this.calcWinPercent(finalWinCount, this.data.totalCount),
+      });
     } else {
       msg = '🙃弱鸡，你输了🙄';
     }
+
+    wx.setStorage({
+      key: 'record',
+      data: {
+        totalCount: this.data.totalCount,
+        winCount: this.data.winCount,
+      },
+    });
+    
 
     wx.showModal({
         title: '结果',
@@ -134,4 +168,11 @@ Page({
         },
       });
   },
+
+
+  calcWinPercent(winCount, totalCount) {
+    const percentData = totalCount ? (winCount / totalCount * 100).toFixed(2) : 0;
+
+    return `${percentData}%`;
+  }
 })
