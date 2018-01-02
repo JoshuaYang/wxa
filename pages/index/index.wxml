@@ -3,4 +3,6 @@
   <button size="mini" bindtap="goto" data-url="/pages/game/game">石头剪刀布</button>
   
   <button size="mini" bindtap="goto" data-url="/pages/draw/draw">画图</button>
+
+  <button size="mini" bindtap="goto" data-url="/pages/music/music">音乐播放</button>
 </view>

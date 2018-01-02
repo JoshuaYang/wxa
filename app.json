@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/game/game",
-    "pages/draw/draw"
+    "pages/draw/draw",
+    "pages/music/music"
   ],
   "window": {
     "backgroundTextStyle": "light",
