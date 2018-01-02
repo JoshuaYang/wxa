@@ -1,0 +1,23 @@
+<!--pages/draw/draw.wxml-->
+<view class="container">
+  <view class="controls">
+      <text>画笔设置</text>
+      <slider min='1' max='10' show-value bindchange='widthChangeHandler'></slider>
+      
+      <view class="colors">
+        <view class="color" bindtap='changeColor' data-color="red" style="background-color: red;"></view>
+        <view class="color" bindtap='changeColor' data-color="yellow" style="background-color: yellow;"></view>
+        <view class="color" bindtap='changeColor' data-color="blue" style="background-color: blue;"></view>
+        <view class="color" bindtap='changeColor' data-color="green" style="background-color: green;"></view>
+         <view class="color" bindtap='changeColor' data-color="black" style="background-color: black;"></view>
+
+         <button size='mini' bindtap='exportHandler'>导出</button>
+      </view>
+  </view>
+
+  <canvas
+    canvas-id='cv'
+    disable-scroll
+    bindtouchstart='touchStartHandler'
+    bindtouchmove='touchMoveHandler'></canvas>
+</view>

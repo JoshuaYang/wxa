@@ -1,0 +1,30 @@
+/* pages/draw/draw.wxss */
+page {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+}
+
+.controls {
+  height: 20%;
+}
+
+.controls .colors {
+  margin-top: 16px;
+}
+
+.controls .colors .color {
+  display: inline-block;
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+canvas {
+  width: 100%;
+  height: 75%;
+  margin-top: 5%;
+  border: 1px solid black;
+}

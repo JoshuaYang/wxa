@@ -64,9 +64,9 @@ Page({
   
   },
 
-  gotoGame() {
+  goto(e) {
     wx.navigateTo({
-      url: '/pages/game/game',
+      url: e.currentTarget.dataset.url,
     })
   },
 })
