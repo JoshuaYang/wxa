@@ -1,11 +1,14 @@
 // pages/music/music.js
+const util = require('../../utils/util.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    searchString: '',
+    songList: [],
   },
 
   /**
@@ -13,12 +16,11 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://c.y.qq.com/soso/fcgi-bin/client_search_cp',
+      url: 'https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg',
       data: {
-        v: '爱的供养',
       },
       success(res) {
-        console.log(res);
+        console.log(res.data);
       },
     });
   },
@@ -70,5 +72,38 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+
+  changeSearchString(e) {
+    this.setData({
+      searchString: e.detail.value,
+    })
+  },
+  searchHandler() {
+    wx.request({
+      url: 'https://c.y.qq.com/soso/fcgi-bin/client_search_cp',
+      data: {
+        w: this.data.searchString,
+        format: 'json'
+      },
+      success: (res) => {
+        console.log(res.data.data.song.list);
+        
+        const songList = [];
+        res.data.data.song.list.forEach((item) => {
+          console.log(item);
+
+          songList.push({
+            id: item.songid,
+            name: item.songname,
+            mid: item.songmid,
+          });
+        });
+
+        this.setData({
+          songList,
+        });
+      }
+    })
+  },
 })

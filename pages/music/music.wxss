@@ -1,1 +1,12 @@
 /* pages/music/music.wxss */
+
+.container {
+}
+
+.input-search {
+  margin-bottom: 10px;
+}
+
+.song-list {
+  margin-top: 20px;
+}
