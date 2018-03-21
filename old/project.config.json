@@ -7,8 +7,8 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
+	"libVersion": "1.7.2",
 	"appid": "wx8f29451f24cd5dde",
 	"projectname": "wxa",
 	"condition": {
@@ -18,10 +18,6 @@
 		},
 		"conversation": {
 			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
