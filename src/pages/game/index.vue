@@ -137,7 +137,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .game-container {
   text-align: center;
 }
