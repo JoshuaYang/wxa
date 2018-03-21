@@ -6,6 +6,5 @@ app.$mount()
 
 export default {
   config: {
-    navigationBarTitleText: '查看启动日志'
   }
 }
