@@ -8,7 +8,7 @@
           <div
             v-for="(color, index) in colorList" :key="index"
             class="color"
-            @click="changeColor('red')"
+            @click="changeColor(color)"
             :style="{backgroundColor: color}"></div>
 
            <button size='mini' @click='exportHandler'>导出</button>
@@ -30,29 +30,28 @@ export default {
   data () {
     return {
       colorList: [
-        'red',
-        'yellow',
-        'blue',
-        'green',
         'black',
-        'orange'
+        'red',
+        'orange',
+        'yellow',
+        'green',
+        'blue'
       ]
     }
   },
   methods: {
     touchStartHandler (e) {
-      console.log('==========', e)
-      // const touch = e.touches[0]
+      const touch = e.mp.touches[0]
 
-      // ctx.moveTo(touch.x, touch.y)
+      ctx.moveTo(touch.x, touch.y)
     },
     touchMoveHandler (e) {
-      console.log('==========', e)
-      // const touch = e.touches[0]
-      // ctx.lineTo(touch.x, touch.y)
-      // ctx.stroke()
-      // ctx.draw(true)
-      // ctx.moveTo(touch.x, touch.y)
+      const touch = e.mp.touches[0]
+
+      ctx.lineTo(touch.x, touch.y)
+      ctx.stroke()
+      ctx.draw(true)
+      ctx.moveTo(touch.x, touch.y)
     },
 
     widthChangeHandler (e) {
