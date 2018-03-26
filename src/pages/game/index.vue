@@ -1,5 +1,5 @@
 <template>
-  <div class="container game-container">
+  <div class="container container-game">
     <div class="wrapper computer-wrapper">
       <span class="title">电脑</span>
       <div class="choice-box">
@@ -138,7 +138,7 @@ export default {
 </script>
 
 <style lang="scss">
-.game-container {
+.container-game {
   text-align: center;
 }
 

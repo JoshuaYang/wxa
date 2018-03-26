@@ -1,5 +1,5 @@
 <template>
-  <div class="container index-container">
+  <div class="container container-index">
     <button @click="goto('/pages/game/game')">石头剪刀布</button>
 
     <button @click="goto('/pages/draw/draw')">画图</button>

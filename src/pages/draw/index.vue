@@ -1,5 +1,5 @@
 <template>
-  <div class="container draw-container">
+  <div class="container container-draw">
     <div class="controls">
         <text>画笔设置</text>
         <slider min='1' max='10' show-value @change='widthChangeHandler'></slider>
@@ -87,7 +87,7 @@ export default {
 </script>
 
 <style lang="scss">
-page, .draw-container {
+page, .container-draw {
   height: 100%;
 }
 
