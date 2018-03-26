@@ -1,8 +1,8 @@
 <template>
   <div class="container index-container">
-    <button size="mini" @click="goto('/pages/game/game')">石头剪刀布</button>
+    <button @click="goto('/pages/game/game')">石头剪刀布</button>
 
-    <button size="mini" @click="goto('/pages/draw/draw')">画图</button>
+    <button @click="goto('/pages/draw/draw')">画图</button>
   </div>
 </template>
 
@@ -21,7 +21,8 @@ export default {
 
 <style lang="scss">
 .container {
-  display: flex;
-  justify-content: space-between;
+  button {
+    margin-bottom: 10px;
+  }
 }
 </style>
